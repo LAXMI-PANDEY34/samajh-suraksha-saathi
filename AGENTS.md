@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Application architecture
+- Keep analysis validation and result types in a shared pure module so the browser, server, and tests enforce the same document contract.
+- Run AI analysis through TanStack server functions, with the Gateway SDK imported inside the handler, so secrets and model calls stay server-only.
+- Use publishable database clients for public analysis reads and inserts so application access follows RLS rather than bypassing it.
+- Fetch public history with a route loader and React Query so first render and subsequent refreshes share one cache.
+- Never persist original uploads or pasted text; only validated analysis output is saved to reduce document exposure.
