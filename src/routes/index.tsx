@@ -33,13 +33,13 @@ function Index() {
   const queryClient = useQueryClient();
 
   useEffect(() => {
-    if (selected) document.getElementById("analysis-result")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (selected) document.getElementById("analysis-result")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" });
   }, [selected]);
 
   function newAnalysis() {
     setSelected(null);
     setError(null);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
   }
 
   async function analyze(input: DocumentPayload) {

@@ -8,6 +8,13 @@
       "when": 1795560900707,
       "tag": "0000_create_public_document_analyses",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1795564969140,
+      "tag": "0001_restrict_public_analysis_grants",
+      "breakpoints": true
     }
   ]
 }
