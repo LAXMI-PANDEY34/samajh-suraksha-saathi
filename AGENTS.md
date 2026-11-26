@@ -35,3 +35,4 @@ use the editor.
 - Use publishable database clients for public analysis reads and inserts so application access follows RLS rather than bypassing it.
 - Fetch public history with a route loader and React Query so first render and subsequent refreshes share one cache.
 - Never persist original uploads or pasted text; only validated analysis output is saved to reduce document exposure.
+- Mirror the analysis content contract in the database policy validator so direct public access cannot bypass field validation.

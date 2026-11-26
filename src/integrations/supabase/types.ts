@@ -49,7 +49,16 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_valid_analysis_content: {
+        Args: {
+          document_type: string
+          questions: Json
+          risky_clauses: Json
+          summary: string
+          verdict: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never
